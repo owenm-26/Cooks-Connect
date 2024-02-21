@@ -3,6 +3,11 @@ Projects being created by
 1. Owen Mariani
 2. Steven Tran
 3. Arya Daryanani
+
+## Quick Links
+[Jira Board](https://cooksconnect.atlassian.net/jira/software/projects/KAN/boards/1)<br>
+[Project Requirements](https://docs.google.com/document/d/1teqNxmvqi7L4fThbg-8FP6M_7jE5EC9NJKtmZf_kqAg/edit?usp=sharing) <br>
+[Project Ideas](https://docs.google.com/document/d/1XU5fpQrDy2VpJUbOKpmHvNnnKnqOBRJfxgQX1dtJ4R4/edit?usp=sharing)<br>
 ## Idea #1: CooksConnect 
 ### Summary 
 A mobile app that allows users to input what ingredients they have on hand that tells them what dishes they can make. Users can choose a recipe and then add it to their list of “dishes completed” visible on their profile. 
