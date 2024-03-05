@@ -4,11 +4,12 @@ import Recipes from './Recipes'
 import { PoweroffOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { useState } from "react";
+
 function App() {
   const [recipes, setRecipes] = useState([]);
   const ApiCall = async () => {
     const fetchRecipes = async () => {
-      const apiKey = "7ea23c74b52e4fe0953ae018b0a96875";
+      const apiKey = "API KEY";
       const ingredients = ["apple", "banana"];
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
