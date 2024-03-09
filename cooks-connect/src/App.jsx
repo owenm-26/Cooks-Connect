@@ -11,11 +11,11 @@ function App() {
   const [isSuccessful, setIsSuccessful] = useState(2); // 2 is not used, 1 is worked, 0 is failed
   const ApiCall = async () => {
     const fetchRecipes = async () => {
-      const apiKey = "API KEY";
+      const apiKey = "API KEY HERE"; //add api key here
       const ingredients = ["apple", "banana"];
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
-      )}&number=2&apiKey=${apiKey}`;
+      )}&number=1&apiKey=${apiKey}`;
       console.log("starting...");
       try {
         const response = await fetch(apiUrl);
