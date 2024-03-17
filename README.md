@@ -1,4 +1,4 @@
-# cs411-project
+# Cooks-Connect
 Projects being created by 
 1. Owen Mariani
 2. Steven Tran
