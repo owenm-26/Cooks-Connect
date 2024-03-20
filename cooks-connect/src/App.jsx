@@ -11,11 +11,11 @@ function App() {
   const [isSuccessful, setIsSuccessful] = useState(2); // 2 is not used, 1 is worked, 0 is failed
   const ApiCall = async () => {
     const fetchRecipes = async () => {
-      const apiKey = "API KEY HERE"; //add api key here
+      const apiKey = "API KEY";
       const ingredients = ["apple", "banana"];
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
-      )}&number=1&apiKey=${apiKey}`;
+      )}&number=2&apiKey=${apiKey}`;
       console.log("starting...");
       try {
         const response = await fetch(apiUrl);
@@ -30,7 +30,6 @@ function App() {
         setIsSuccessful(0);
       }
     };
-
     fetchRecipes();
     // Empty dependency array to ensure useEffect runs only once
     console.log("finished!");
@@ -44,6 +43,7 @@ function App() {
       <Button type="primary" icon={<PoweroffOutlined />} onClick={ApiCall}>
         Click me!
       </Button>
+      {console.log(process.env.REACT_APP_SPOONACULAR_API_KEY)}
       {isSuccessful == 1 ? (
         <ul>
           {recipes.map((recipe, idx) => (
