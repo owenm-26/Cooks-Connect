@@ -1,0 +1,14 @@
+1) Install React locally on computer and Node.js, npm or yarn
+2) Download the https://www.npmjs.com/package/@react-oauth/google package; permits user to integrate google login feature to react app and grants access to all needed Google API tokens 
+3) Get a google client ID; go to personal Google cloud console, create a new project https://console.cloud.google.com/welcome/new
+4) Create a consent page (alerts user to be redirected to a third party page from the main website page); “OAuth consent screen” tab on the left-side menu of your Google Cloud Console, then select external under “user type”.
+5) In the same tab as step 4 put in personal details into “App information” to monitor changes to the project. The app must be published in order to test the consent page (change status from testing to production).
+6) Create your own web client ID; on the same menu go to the “credential” tab, click on CREATE CREDENTIALS at the top of the page, and then select the OAuth client ID option. For a React app, choose “Web application”, name it including “Web ID” to differentiate the different ID’s appropriately if there are many platforms the app is on.
+7) Adding two URLS; 1)Authorized JavaScript origins http://localhost:3000 (the URL from which your application is originating the login) and 2)Authorized redirect URLs http://localhost (the link that Google will redirect the user to after the successful login). After creating, copy the new web client ID via copy button.
+
+to install the package before anything
+//Npm
+npm install @react-oauth/google@latest
+
+//Yarn
+yarn add @react-oauth/google@latest
