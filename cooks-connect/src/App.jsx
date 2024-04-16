@@ -13,10 +13,10 @@ function App() {
   const ApiCall = async (ingredients) => {
     const fetchRecipes = async () => {
       const apiKey = import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY;
-      // const ingredients = ["apple", "banana"];
+      const limit = 8;
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
-      )}&number=2&apiKey=${apiKey}`;
+      )}&number=${limit}&apiKey=${apiKey}`;
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -53,7 +53,19 @@ function App() {
       <h1>Recipes</h1>
       <InputBox setInput={setInput} handleInput={handleInput} />
       {isSuccessful == 1 ? (
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            maxWidth: "100%",
+            background: "rgba(240, 240, 240)",
+            flexWrap: "wrap",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "2vh",
+          }}
+        >
           {recipes.map((recipe, idx) => (
             <Recipes item={recipe} key={idx} />
           ))}

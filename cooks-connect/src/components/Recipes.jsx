@@ -9,8 +9,8 @@ function Recipes(item) {
       hoverable
       key={recipe.id}
       style={{
-        width: 240,
-        margin: "4vh 4vw",
+        width: "25%",
+        margin: "4vh 2vw",
       }}
       cover={<img alt={recipe.title} src={recipe.image} />}
     >
