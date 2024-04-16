@@ -1,19 +1,19 @@
-import "./App.css";
-import "./assets/chef-hat-logo.png";
-import Recipes from "./components/Recipes";
+import "../App.css";
+import "../assets/chef-hat-logo.png";
+import Recipes from "../components/Recipes";
 
 import { useState } from "react";
-import CustomHeader from "./layout/Header";
-import InputBox from "./components/InputBox";
+import CustomHeader from "../layout/Header";
+import InputBox from "../components/InputBox";
 
-function App() {
+function Search() {
   const [recipes, setRecipes] = useState([]);
   const [isSuccessful, setIsSuccessful] = useState(2); // 2 is not used, 1 is worked, 0 is failed
   const [input, setInput] = useState("");
   const ApiCall = async (ingredients) => {
     const fetchRecipes = async () => {
       const apiKey = import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY;
-      const limit = 8;
+      const limit = 2;
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
       )}&number=${limit}&apiKey=${apiKey}`;
@@ -79,4 +79,4 @@ function App() {
   );
 }
 
-export default App;
+export default Search;

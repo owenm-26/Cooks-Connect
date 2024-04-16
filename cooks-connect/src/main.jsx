@@ -1,10 +1,11 @@
 import React from "react";
-import App from "./App.jsx";
+import Search from "./pages/Search.jsx";
 import "./index.css";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/LandingPage.jsx";
 import Profile from "./pages/Profile.jsx";
+import RecipeItemPage from "./pages/RecipeItemPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/recipes",
-    element: <App />,
+    element: <Search />,
   },
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: `/recipe/:id`,
+    element: <RecipeItemPage />,
   },
 ]);
 
