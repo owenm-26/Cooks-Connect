@@ -11,7 +11,7 @@ function App() {
   const [isSuccessful, setIsSuccessful] = useState(2); // 2 is not used, 1 is worked, 0 is failed
   const ApiCall = async () => {
     const fetchRecipes = async () => {
-      const apiKey = "API KEY";
+      const apiKey = import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY;
       const ingredients = ["apple", "banana"];
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
@@ -43,7 +43,7 @@ function App() {
       <Button type="primary" icon={<PoweroffOutlined />} onClick={ApiCall}>
         Click me!
       </Button>
-      {console.log(process.env.REACT_APP_SPOONACULAR_API_KEY)}
+      {console.log(import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY)}
       {isSuccessful == 1 ? (
         <ul>
           {recipes.map((recipe, idx) => (
