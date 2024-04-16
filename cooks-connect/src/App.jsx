@@ -1,22 +1,22 @@
 import "./App.css";
 import "./assets/chef-hat-logo.png";
-import Recipes from "./Recipes";
-import { PoweroffOutlined } from "@ant-design/icons";
-import { Button } from "antd";
+import Recipes from "./components/Recipes";
+
 import { useState } from "react";
 import CustomHeader from "./layout/Header";
+import InputBox from "./components/InputBox";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [isSuccessful, setIsSuccessful] = useState(2); // 2 is not used, 1 is worked, 0 is failed
-  const ApiCall = async () => {
+  const [input, setInput] = useState("");
+  const ApiCall = async (ingredients) => {
     const fetchRecipes = async () => {
       const apiKey = import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY;
-      const ingredients = ["apple", "banana"];
+      // const ingredients = ["apple", "banana"];
       const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(
         ","
       )}&number=2&apiKey=${apiKey}`;
-      console.log("starting...");
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -32,24 +32,32 @@ function App() {
     };
     fetchRecipes();
     // Empty dependency array to ensure useEffect runs only once
-    console.log("finished!");
     setIsSuccessful(1);
+  };
+
+  const handleInput = () => {
+    // handle
+    // const ingredients = ["apple", "banana"];
+    if (input == [""]) {
+      alert("Please enter at least one ingredient!");
+      return;
+    }
+    const ingredients = input.split(",").map((item) => item.trim());
+    console.log(ingredients);
+    ApiCall(ingredients);
   };
 
   return (
     <>
       <CustomHeader />
       <h1>Recipes</h1>
-      <Button type="primary" icon={<PoweroffOutlined />} onClick={ApiCall}>
-        Click me!
-      </Button>
-      {console.log(import.meta.env.VITE_REACT_APP_SPOONACULAR_API_KEY)}
+      <InputBox setInput={setInput} handleInput={handleInput} />
       {isSuccessful == 1 ? (
-        <ul>
+        <div style={{ display: "flex", flexDirection: "row" }}>
           {recipes.map((recipe, idx) => (
             <Recipes item={recipe} key={idx} />
           ))}
-        </ul>
+        </div>
       ) : isSuccessful == 2 ? (
         <p>No button clicked (don't click it too much) </p>
       ) : (
