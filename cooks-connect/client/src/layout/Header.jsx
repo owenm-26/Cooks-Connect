@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { HomeOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
+const PORT = import.meta.env.VITE_PORT;
 
 const items = [
   {
-    label: <a href="./">Home</a>,
+    label: <a href={`http://localhost:${PORT}/`}>Home</a>,
     key: "home",
     icon: <HomeOutlined />,
   },
   {
-    label: <a href="./recipes">Recipes</a>,
+    label: <a href={`http://localhost:${PORT}/recipes`}>Recipes</a>,
     key: "recipe",
     icon: <SmileOutlined />,
   },
   {
-    label: <a href="./profile">Profile</a>,
+    label: <a href={`http://localhost:${PORT}/profile`}>Profile</a>,
     key: "profile",
     icon: <UserOutlined />,
   },
