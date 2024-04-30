@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 const { Meta } = Card;
 
 function Recipes(item) {
-  // console.log(item.item);
   const recipe = item.item;
   const navigate = useNavigate();
   return (
