@@ -15,6 +15,7 @@ function InputBox({ setInput, handleInput }) {
           width: "50vw",
           marginRight: "1vw",
         }}
+        onPressEnter={handleInput}
       />
       <Button type="primary" icon={<PoweroffOutlined />} onClick={handleInput}>
         Find Recipe!
