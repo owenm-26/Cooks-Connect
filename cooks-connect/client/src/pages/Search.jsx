@@ -5,6 +5,7 @@ import Recipes from "../components/Recipes";
 import { useState } from "react";
 import CustomHeader from "../layout/Header";
 import InputBox from "../components/InputBox";
+import { fakeRecipe } from "../../testing/fakeRecipe";
 
 function Search() {
   const [recipes, setRecipes] = useState([]);
@@ -25,6 +26,7 @@ function Search() {
         }
         const data = await response.json();
         setRecipes(data);
+        setIsSuccessful(1);
       } catch (error) {
         console.error("Error fetching recipes:", error);
         setIsSuccessful(0);
@@ -35,8 +37,16 @@ function Search() {
     setIsSuccessful(1);
   };
 
+  const fakeApiCall = () => {
+    console.log("fake call started");
+    console.log("fake:", fakeRecipe);
+    setRecipes([fakeRecipe, fakeRecipe]);
+    setIsSuccessful(1);
+    console.log("fake call worked");
+    return;
+  };
+
   const handleInput = () => {
-    // handle
     // const ingredients = ["apple", "banana"];
     if (input == [""]) {
       alert("Please enter at least one ingredient!");
@@ -44,7 +54,11 @@ function Search() {
     }
     const ingredients = input.split(",").map((item) => item.trim());
     console.log(ingredients);
-    ApiCall(ingredients);
+
+    //uncomment to activate API
+    // ApiCall(ingredients);
+    console.log("running fake");
+    fakeApiCall();
   };
 
   return (
