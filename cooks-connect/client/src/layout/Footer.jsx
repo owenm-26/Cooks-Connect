@@ -1,5 +1,6 @@
 import React from "react";
 import { Footer } from "antd/es/layout/layout";
+import { theme } from "antd";
 
 function CustomFooter() {
   const {
