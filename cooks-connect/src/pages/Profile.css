@@ -1,0 +1,6 @@
+.defaultClass{
+    width: 40px;
+    border-radius: 50%;
+    object-fit: fill;
+    border: 1px solid black;
+}
