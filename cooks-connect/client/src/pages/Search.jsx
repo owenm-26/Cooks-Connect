@@ -6,6 +6,7 @@ import { useState } from "react";
 import CustomHeader from "../layout/Header";
 import InputBox from "../components/InputBox";
 import { fakeRecipe } from "../../testing/fakeRecipe";
+import CustomFooter from "../layout/Footer";
 
 function Search() {
   const [recipes, setRecipes] = useState([]);
@@ -89,6 +90,9 @@ function Search() {
       ) : (
         <p>Failed! Check console for error.</p>
       )}
+      <div style={{ position: "absolute", bottom: 0, width: "100%" }}>
+        <CustomFooter />
+      </div>
     </>
   );
 }

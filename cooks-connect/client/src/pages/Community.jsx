@@ -11,7 +11,7 @@ function Community() {
   const VITE_BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 3000;
 
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: { colorBgContainer },
   } = theme.useToken();
 
   useEffect(() => {
