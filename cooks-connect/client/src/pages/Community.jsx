@@ -13,10 +13,46 @@ function Community() {
     setName("");
   };
 
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Dishes Made",
+      dataIndex: "dishCount",
+      key: "dishCount",
+    },
+    {
+      title: "Date Joined",
+      dataIndex: "date",
+      key: "date",
+    },
+  ];
+
+  const dataSource = [
+    {
+      key: "1",
+      name: "Mike",
+      dishCount: 32,
+      date: "10.11.24",
+    },
+    {
+      key: "2",
+      name: "John",
+      dishCount: 42,
+      date: "1.12.24",
+    },
+  ];
+
   return (
     <Layout.Content
       style={{
         backgroundColor: colorBgContainer,
+        padding: "4vh 4vw",
+        borderRadius: "10px",
+        height: "100vh",
       }}
     >
       <Typography.Title level={1}>Our Community</Typography.Title>
@@ -51,7 +87,7 @@ function Community() {
           </Button>
         </Form.Item>
       </Form>
-      <Table />
+      <Table columns={columns} dataSource={dataSource} pagination={false} />
     </Layout.Content>
   );
 }
