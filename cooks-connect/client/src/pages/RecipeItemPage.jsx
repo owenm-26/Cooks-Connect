@@ -17,8 +17,8 @@ function RecipeItemPage() {
 
   useEffect(() => {
     //delete this "return" when using API
-    setRecipe(fakeRecipe);
-    return;
+    // setRecipe(fakeRecipe);
+    // return;
     const getRecipeById = async (id) => {
       try {
         const response = await fetch(

@@ -57,9 +57,9 @@ function Search() {
     console.log(ingredients);
 
     //uncomment to activate API
-    // ApiCall(ingredients);
-    console.log("running fake");
-    fakeApiCall();
+    ApiCall(ingredients);
+    // console.log("running fake");
+    // fakeApiCall();
   };
 
   return (
