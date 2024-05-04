@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/LandingPage.jsx";
 import Profile from "./pages/Profile.jsx";
 import RecipeItemPage from "./pages/RecipeItemPage.jsx";
+import LoginScreen from "./pages/LoginScreen.jsx";
+import RegisterScreen from "./pages/RegisterScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: `/recipe/:id`,
     element: <RecipeItemPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginScreen />
+  },
+  {
+    path: "register",
+    element: <RegisterScreen />
   },
 ]);
 

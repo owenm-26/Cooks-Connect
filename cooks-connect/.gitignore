@@ -1,7 +1,12 @@
 #mine
+<<<<<<< Updated upstream
 *.env
 /server/env
 
+=======
+.env
+index.js
+>>>>>>> Stashed changes
 
 # Logs
 logs

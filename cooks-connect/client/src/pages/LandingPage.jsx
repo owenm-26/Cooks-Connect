@@ -1,5 +1,7 @@
 import CustomHeader from "../layout/Header";
 import { useState } from "react";
+import "./LandingPage.css";
+import { Container, Row, Button } from "react-bootstrap";
 
 const LandingPage = () => {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -21,9 +23,22 @@ const LandingPage = () => {
         width="200px"
         onClick={toggleSpin}
       ></img>
-      <h1>Cooks Connect</h1>
-      <p>To be implemented soon...</p>
-      <a href="./recipes">Try the beta</a>
+      <div className="intro">
+        <h1>Cooks Connect</h1>
+        <p>To be implemented soon...</p>
+          <div className="buttonContainer">
+            <a href="/login">
+              <Button size="lg" className="landingbutton">
+                Login
+              </Button>
+            </a>
+            <a href="/register">
+              <Button size="lg" className="landingbutton" variant="outline-primary">
+                Signup
+              </Button>
+            </a>
+          </div>
+      </div>
     </>
   );
 };
