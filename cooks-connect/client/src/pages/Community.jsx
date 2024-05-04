@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 
 function Community() {
   const [name, setName] = useState("");
+  const [dishCount, setDishCount] = useState();
   const [community, setCommunity] = useState();
   const VITE_BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 3000;
 
@@ -42,7 +43,7 @@ function Community() {
     const newMember = {
       name: name,
       date: date,
-      dishCount: 0,
+      dishCount: dishCount,
     };
 
     try {
@@ -78,6 +79,8 @@ function Community() {
       title: "Dishes Made",
       dataIndex: "dishCount",
       key: "dishCount",
+      sorter: (a, b) => a.dishCount - b.dishCount,
+      defaultSortOrder: "descend",
     },
     {
       title: "Date Joined",
@@ -120,6 +123,21 @@ function Community() {
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+          />
+        </Form.Item>
+        <Form.Item
+          name="dishCount"
+          rules={[
+            {
+              required: true,
+              message: "This parts required!",
+            },
+          ]}
+        >
+          <Input
+            placeholder="10"
+            value={dishCount}
+            onChange={(e) => setDishCount(e.target.value)}
           />
         </Form.Item>
         <Form.Item>
