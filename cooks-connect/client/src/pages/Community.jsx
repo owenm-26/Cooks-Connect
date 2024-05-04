@@ -4,15 +4,40 @@ import dayjs from "dayjs";
 
 function Community() {
   const [name, setName] = useState("");
+  const VITE_BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 3000;
 
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
-  const handleJoin = () => {
+  const handleJoin = async () => {
     console.log("Joined!", name);
-    const date = Date();
+    const date = dayjs(Date()).format("MM/DD/YYYY");
     console.log(date);
+
+    try {
+      const response = await fetch(
+        `http://localhost:${VITE_BACKEND_PORT}/api/joinCommunity`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            date: date,
+            dishCount: 0,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
     setName("");
   };
 
