@@ -3,11 +3,11 @@ import Search from "./pages/Search.jsx";
 import "./index.css";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./pages/LandingPage.jsx";
-import Profile from "./pages/Profile.jsx";
+import LandingPage from "./pages/Landing/LandingPage.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
 import RecipeItemPage from "./pages/RecipeItemPage.jsx";
-import LoginScreen from "./pages/LoginScreen.jsx";
-import RegisterScreen from "./pages/RegisterScreen.jsx";
+import LoginScreen from "./pages/Login/LoginScreen.jsx";
+import RegisterScreen from "./pages/Register/RegisterScreen.jsx";
 
 const router = createBrowserRouter([
   {

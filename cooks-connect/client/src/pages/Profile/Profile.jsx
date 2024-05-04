@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomHeader from "../layout/Header";
+import CustomHeader from "../../layout/Header";
 import { useRef, useState } from "react";
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import './Profile.css';
-import avatar from './avatar.png';
+import avatar from '../../assets/avatar.png';
 
 const Profile = (className, src, alt) => {
 

@@ -1,4 +1,4 @@
-import CustomHeader from "../layout/Header";
+import CustomHeader from "../../layout/Header";
 import { useState } from "react";
 import "./LandingPage.css";
 import { Container, Row, Button } from "react-bootstrap";
