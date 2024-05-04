@@ -1,19 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Typography, Layout, theme, Table, Button, Form, Input } from "antd";
 import dayjs from "dayjs";
 
 function Community() {
   const [name, setName] = useState("");
+  const [community, setCommunity] = useState();
   const VITE_BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT || 3000;
 
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  useEffect(() => {
+    const getCommunity = async () => {
+      const response = await fetch(
+        `http://localhost:${VITE_BACKEND_PORT}/api/community`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setCommunity(data.data);
+      } else {
+        console.log("error getting community");
+      }
+    };
+
+    getCommunity();
+  }, []);
+
   const handleJoin = async () => {
     console.log("Joined!", name);
     const date = dayjs(Date()).format("MM/DD/YYYY");
     console.log(date);
+
+    const newMember = {
+      name: name,
+      date: date,
+      dishCount: 0,
+    };
 
     try {
       const response = await fetch(
@@ -23,17 +53,14 @@ function Community() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            name: name,
-            date: date,
-            dishCount: 0,
-          }),
+          body: JSON.stringify(newMember),
         }
       );
 
       if (response.ok) {
         const data = await response.json();
         console.log(data);
+        setCommunity([...community, newMember]);
       }
     } catch (error) {
       console.log(error);
@@ -56,21 +83,7 @@ function Community() {
       title: "Date Joined",
       dataIndex: "date",
       key: "date",
-    },
-  ];
-
-  const dataSource = [
-    {
-      key: "1",
-      name: "Mike",
-      dishCount: 32,
-      date: "10.11.24",
-    },
-    {
-      key: "2",
-      name: "John",
-      dishCount: 42,
-      date: "1.12.24",
+      render: (record) => dayjs(record).format("MM/DD/YYYY"),
     },
   ];
 
@@ -115,7 +128,7 @@ function Community() {
           </Button>
         </Form.Item>
       </Form>
-      <Table columns={columns} dataSource={dataSource} pagination={false} />
+      <Table columns={columns} dataSource={community} pagination={false} />
     </Layout.Content>
   );
 }
