@@ -16,6 +16,7 @@ A mobile app that allows users to input what ingredients they have on hand, and 
 ### Video Demonstration
 
 [Alpha Demonstration](https://drive.google.com/file/d/1HZPaM7oSC4tg-cYKUj8kVpIiN58vfppT/view?usp=sharing)
+[Finished Project Demo](https://drive.google.com/file/d/1WqKI_Slm1WrDHGlkMlD7Xq-Bh9J-mPu5/view?usp=sharing)
 
 ### Instructions
 
