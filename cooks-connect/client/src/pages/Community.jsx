@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Typography, Layout, theme, Table, Button, Form, Input } from "antd";
+import dayjs from "dayjs";
 
 function Community() {
   const [name, setName] = useState("");
@@ -10,6 +11,8 @@ function Community() {
 
   const handleJoin = () => {
     console.log("Joined!", name);
+    const date = Date();
+    console.log(date);
     setName("");
   };
 
@@ -58,7 +61,6 @@ function Community() {
       <Typography.Title level={1}>Our Community</Typography.Title>
       <Form
         onFinish={handleJoin}
-        onFinishFailed={() => console.log("failed")}
         style={{
           maxWidth: 600,
           display: "inline-flex",
@@ -67,18 +69,19 @@ function Community() {
           remember: true,
         }}
       >
-        <Form.Item>
+        <Form.Item
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Name!",
+            },
+          ]}
+        >
           <Input
             placeholder="Your Name"
-            name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            rules={[
-              {
-                required: true,
-                message: "Please input your name!",
-              },
-            ]}
           />
         </Form.Item>
         <Form.Item>
