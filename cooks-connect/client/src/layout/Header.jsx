@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-import { HomeOutlined, SmileOutlined, UserOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import {
+  HomeOutlined,
+  SmileOutlined,
+  UserOutlined,
+  TrophyOutlined,
+} from "@ant-design/icons";
 import { Menu } from "antd";
 const PORT = import.meta.env.VITE_PORT;
 
@@ -18,6 +23,11 @@ const items = [
     label: <a href={`http://localhost:${PORT}/profile`}>Profile</a>,
     key: "profile",
     icon: <UserOutlined />,
+  },
+  {
+    label: <a href={`http://localhost:${PORT}/community`}>Community</a>,
+    key: "users",
+    icon: <TrophyOutlined />,
   },
 ];
 const CustomHeader = () => {

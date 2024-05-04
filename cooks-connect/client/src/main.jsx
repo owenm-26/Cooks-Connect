@@ -8,6 +8,7 @@ import Profile from "./pages/Profile/Profile.jsx";
 import RecipeItemPage from "./pages/RecipeItemPage.jsx";
 import LoginScreen from "./pages/Login/LoginScreen.jsx";
 import RegisterScreen from "./pages/Register/RegisterScreen.jsx";
+import Community from "./pages/Community.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,11 +29,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LoginScreen />
+    element: <LoginScreen />,
   },
   {
     path: "register",
-    element: <RegisterScreen />
+    element: <RegisterScreen />,
+  },
+  {
+    path: "community",
+    element: <Community />,
   },
 ]);
 
