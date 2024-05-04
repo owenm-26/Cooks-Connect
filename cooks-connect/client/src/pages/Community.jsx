@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Typography, Layout, theme, Table, Button, Form, Input } from "antd";
 import dayjs from "dayjs";
+import CustomHeader from "../layout/Header.jsx";
+import CustomFooter from "../layout/Footer.jsx";
 
 function Community() {
   const [name, setName] = useState("");
@@ -91,63 +93,67 @@ function Community() {
   ];
 
   return (
-    <Layout.Content
-      style={{
-        backgroundColor: colorBgContainer,
-        padding: "4vh 4vw",
-        borderRadius: "10px",
-        height: "100vh",
-      }}
-    >
-      <Typography.Title level={1}>Our Community</Typography.Title>
-      <Form
-        onFinish={handleJoin}
+    <>
+      <CustomHeader />
+      <Layout.Content
         style={{
-          maxWidth: 600,
-          display: "inline-flex",
-        }}
-        initialValues={{
-          remember: true,
+          backgroundColor: colorBgContainer,
+          padding: "4vh 4vw",
+          borderRadius: "10px",
+          height: "100vh",
         }}
       >
-        <Form.Item
-          name="name"
-          rules={[
-            {
-              required: true,
-              message: "Please input your Name!",
-            },
-          ]}
+        <Typography.Title level={1}>Our Community</Typography.Title>
+        <Form
+          onFinish={handleJoin}
+          style={{
+            maxWidth: 600,
+            display: "inline-flex",
+          }}
+          initialValues={{
+            remember: true,
+          }}
         >
-          <Input
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item
-          name="dishCount"
-          rules={[
-            {
-              required: true,
-              message: "This parts required!",
-            },
-          ]}
-        >
-          <Input
-            placeholder="10"
-            value={dishCount}
-            onChange={(e) => setDishCount(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Join Now!{" "}
-          </Button>
-        </Form.Item>
-      </Form>
-      <Table columns={columns} dataSource={community} pagination={false} />
-    </Layout.Content>
+          <Form.Item
+            name="name"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Name!",
+              },
+            ]}
+          >
+            <Input
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item
+            name="dishCount"
+            rules={[
+              {
+                required: true,
+                message: "This parts required!",
+              },
+            ]}
+          >
+            <Input
+              placeholder="10"
+              value={dishCount}
+              onChange={(e) => setDishCount(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Join Now!{" "}
+            </Button>
+          </Form.Item>
+        </Form>
+        <Table columns={columns} dataSource={community} pagination={false} />
+      </Layout.Content>
+      <CustomFooter />
+    </>
   );
 }
 
