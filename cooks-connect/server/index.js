@@ -3,9 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const router = require("./router"); // Import the router correctly
 require("dotenv").config();
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(cors());
+app.use(bodyParser.json());
 
 const MONGO_URI = process.env.MONGO_URI;
 
