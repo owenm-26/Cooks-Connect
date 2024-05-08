@@ -1,14 +1,11 @@
-import React from 'react';
 import CustomHeader from "../../layout/Header";
 import { useRef, useState } from "react";
-import { Dialog } from 'primereact/dialog';
-import { InputText } from 'primereact/inputtext';
-import './Profile.css';
-import avatar from '../../assets/avatar.png';
+import { InputText } from "primereact/inputtext";
+import "./Profile.css";
+import avatar from "../../assets/avatar.png";
 import CustomFooter from "../../layout/Footer";
 
 const Profile = (className, src, alt) => {
-
   const inputRef = useRef(null);
   const [image, setImage] = useState("");
 
@@ -17,14 +14,14 @@ const Profile = (className, src, alt) => {
   };
 
   const handleOnError = () => {
-    console.error("Error", error);
-  }
+    console.error("Error");
+  };
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     console.log(file);
-    setImage('');
-  }
+    setImage("");
+  };
 
   return (
     <>

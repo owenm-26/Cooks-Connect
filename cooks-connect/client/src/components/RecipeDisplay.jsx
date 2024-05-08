@@ -1,5 +1,4 @@
 import { Button, Image, Layout, Typography, theme } from "antd";
-import ButtonGroup from "antd/es/button/button-group";
 import { Content } from "antd/es/layout/layout";
 
 function RecipeDisplay({ recipe }) {

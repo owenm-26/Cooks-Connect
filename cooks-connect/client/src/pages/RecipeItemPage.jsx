@@ -1,14 +1,9 @@
-import { Button, Image, Layout, Typography, theme } from "antd";
-import ButtonGroup from "antd/es/button/button-group";
-import { Content, Header } from "antd/es/layout/layout";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fakeRecipe } from "../../testing/fakeRecipe";
 import RecipeDisplay from "../components/RecipeDisplay";
 import CustomHeader from "../layout/Header";
 import CustomFooter from "../layout/Footer";
-
-
 
 function RecipeItemPage() {
   const [recipe, setRecipe] = useState();

@@ -139,7 +139,7 @@ function Community() {
             ]}
           >
             <Input
-              placeholder="10"
+              placeholder="Dishes Made"
               value={dishCount}
               onChange={(e) => setDishCount(e.target.value)}
             />

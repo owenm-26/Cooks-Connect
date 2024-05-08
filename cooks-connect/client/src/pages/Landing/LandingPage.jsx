@@ -1,7 +1,7 @@
 import CustomHeader from "../../layout/Header";
 import { useState, useEffect } from "react";
 import "./LandingPage.css";
-import { Container, Row, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import CustomFooter from "../../layout/Footer";
 import { theme } from "antd";
 
