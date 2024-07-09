@@ -1,11 +1,3 @@
-# Cooks-Connect
-
-This project was created by
-
-1. Owen Mariani
-2. Steven Tran
-3. Arya Daryanani
-
 ## CooksConnect
 
 ### Summary
@@ -27,3 +19,10 @@ Type these into the terminal
 3. npm run dev
 4. cd `../server`
 5. nodemon index.js
+
+### Contributors
+<a href="https://github.com/owenm-26/Cooks-Connect/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=owenm-26/Cooks-Connect" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
